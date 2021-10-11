@@ -11,7 +11,7 @@ body {
   display: grid;
   color: white;
   background: darkslategray;
-  width: 10rem;
+  width: 15rem;
   height: 20rem;
   padding: 2rem;
   margin: 1rem;
@@ -25,10 +25,10 @@ body {
 }
 .buttons {
   display: flex;
-  gap: 0.25rem;
+  gap: 1rem;
 }
 
-/* .yes,
+.yes,
 .no {
   background: none;
   border: #fff 0.1rem solid;
@@ -43,4 +43,4 @@ body {
 .no:hover {
   background: white;
   color: darkslategray;
-} */
+}
