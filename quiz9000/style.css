@@ -9,14 +9,15 @@ body {
 
 .quizcard {
   display: grid;
-  color: white;
-  background: rgb(18, 91, 130);
+  color: rgb(23, 71, 87);
+  background: rgb(196, 210, 215);
   width: 15rem;
   padding: 2rem;
   margin: 1rem;
   align-items: center;
   justify-items: center;
   border-radius: 1rem;
+  font-size: 1.3rem;
 }
 
 .question {
@@ -30,42 +31,48 @@ body {
 .yes,
 .no {
   background: none;
-  border: #fff 0.1rem solid;
+  border: rgb(23, 71, 87) 0.1rem solid;
   border-radius: 0.5rem;
   text-decoration: none;
-  color: white;
+  color: rgb(23, 71, 87);
   width: 5rem;
   height: 2rem;
+  margin-bottom: 1rem;
 }
 
 .yes:hover,
 .no:hover {
-  background: white;
-  color: rgb(79, 47, 47);
+  background: rgb(23, 71, 87);
+  color: white;
 }
 
 .correct {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-align: center;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
   color: white;
-  background: rgb(51, 96, 54);
-  padding: 0.5rem;
-  border: #fff 0.1rem solid;
+  padding: 1rem;
+  letter-spacing: 0.1rem;
+  background: rgb(66, 106, 68);
 }
 
 .incorrect {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-align: center;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
   color: white;
-  background: rgb(96, 51, 51);
-  padding: 0.5rem;
-  border: #fff 0.1rem solid;
+  padding: 1rem;
+  letter-spacing: 0.1rem;
+  background: rgb(106, 16, 16);
 }
 
 .nextButton {
   font-size: 0.75rem;
   text-align: center;
   opacity: 50%;
-  color: white;
+  color: rgb(23, 71, 87);
+
   text-decoration: underline;
 }
