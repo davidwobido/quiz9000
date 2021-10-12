@@ -44,3 +44,13 @@ body {
   background: white;
   color: darkslategray;
 }
+
+.correct {
+  text-align: center;
+  color: darkslategray;
+}
+
+.incorrect {
+  text-align: center;
+  color: red;
+}
