@@ -10,7 +10,7 @@ body {
 .quizcard {
   display: grid;
   color: white;
-  background: darkslategray;
+  background: rgb(18, 91, 130);
   width: 15rem;
   padding: 2rem;
   margin: 1rem;
@@ -41,23 +41,31 @@ body {
 .yes:hover,
 .no:hover {
   background: white;
-  color: darkslategray;
+  color: rgb(79, 47, 47);
 }
 
 .correct {
   font-size: 0.75rem;
   text-align: center;
-  color: darkslategray;
-  background: white;
+  color: white;
+  background: rgb(51, 96, 54);
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border: #fff 0.1rem solid;
 }
 
 .incorrect {
   font-size: 0.75rem;
   text-align: center;
-  color: red;
-  background: white;
+  color: white;
+  background: rgb(96, 51, 51);
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border: #fff 0.1rem solid;
+}
+
+.nextButton {
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 50%;
+  color: white;
+  text-decoration: underline;
 }

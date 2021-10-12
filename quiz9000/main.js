@@ -1,8 +1,8 @@
 const correctAnswer = true;
 
 // Frage
-const Question = document.querySelector(".question");
-Question.textContent = "Is this the first question?";
+const question = document.querySelector(".question");
+question.textContent = "Is this the first question?";
 
 // Yes-Button
 const yesButton = document.querySelector(".yes");
@@ -35,6 +35,7 @@ function showAnswerIsCorrect() {
   // document.body.append(resultElement);
   Print.appendChild(resultElement);
   disableButtons();
+  nextQuestion();
 }
 
 function showAnswerIsIncorrect() {
@@ -43,7 +44,6 @@ function showAnswerIsIncorrect() {
   resultElement.className = "incorrect";
   // document.body.append(resultElement);
   Print.appendChild(resultElement);
-  disableButtons();
 }
 
 function disableButtons() {
@@ -51,39 +51,12 @@ function disableButtons() {
   noButton.disabled = true;
 }
 
-//solution 1
-// const yesButton = document.querySelector(".yes");
-
-// yesButton.onclick = function () {
-//   if (correctAnswer === true) {
-//     const correct = document.createElement("p");
-//     correct.className = "testclass";
-//     const correctAnswerText = document.createTextNode("Your answer is correct");
-//     correct.appendChild(correctAnswerText);
-//     document.body.appendChild(correctAnswerText);
-//   } else {
-//     alert("Try again");
-//   }
-// };
-
-// const yesButton = document.querySelector(".yes");
-// yesButton.onclick = function () {
-//   if (correctAnswer === true) {
-//     alert("The answer is right! 🙃");
-//   } else {
-//     alert("This answer is wrong☹️");
-//   }
-// };
-
-// const noButton = document.querySelector(".no");
-// noButton.onclick = function () {
-//   alert("The answer is wrong! :(");
-// };
-
-//   document.querySelector(".yes").onclick = function () {
-//     alert("The answer is right! 🙃");
-//   };
-
-//   document.querySelector(".no").onclick = function () {
-//     alert("The answer is wrong! ☹️");
-//   };
+function nextQuestion() {
+  const nextButton = document.createElement("p");
+  nextButton.textContent = "Next Question";
+  nextButton.className = "nextButton";
+  Print.appendChild(nextButton);
+  nextButton.onclick = function () {
+    question.textContent = "Is the name of the Quiz 'Quiz 9001'?";
+  };
+}
