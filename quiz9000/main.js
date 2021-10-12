@@ -1,39 +1,48 @@
 const correctAnswer = true;
 
+// Frage
 const Question = document.querySelector(".question");
 Question.textContent = "Is this the first question?";
 
+// Yes-Button
 const yesButton = document.querySelector(".yes");
 yesButton.onclick = function () {
   if (correctAnswer === true) {
-    // Variable resultElement anlegen, die ein p erstellt
-    const resultElement = document.createElement("p");
-    // p gibt Text aus
-    resultElement.textContent = "That’s right!";
-    // p Klasse geben
-    resultElement.className = "correct";
-    //resultElement dem body als letztes hinzufügen
-    document.body.append(resultElement);
+    showAnswerIsCorrect();
   } else {
-    alert("Try again");
+    showAnswerIsIncorrect;
   }
 };
 
+// No-Button
 const noButton = document.querySelector(".no");
 noButton.onclick = function () {
-  if (correctAnswer === true) {
-    // Variable resultElement anlegen, die ein p erstellt
-    const resultElement = document.createElement("p");
-    // p gibt Text aus
-    resultElement.textContent = "That’s wrong";
-    // p Klasse geben
-    resultElement.className = "incorrect";
-    //resultElement dem body als letztes hinzufügen
-    document.body.append(resultElement);
+  if (correctAnswer === false) {
+    showAnswerIsCorrect();
   } else {
-    alert("Try again");
+    showAnswerIsIncorrect();
   }
 };
+
+function showAnswerIsCorrect() {
+  // Variable resultElement anlegen, die ein p erstellt
+  const resultElement = document.createElement("p");
+  // p hat den Inhalt
+  resultElement.textContent = "That’s right! 🙃";
+  // p hat die Klasse
+  resultElement.className = "correct";
+  //resultElement dem body hinzufügen (append am Ende. prepend am Anfang.)
+  // document.body.append(resultElement);
+  Print.appendChild(resultElement);
+}
+
+function showAnswerIsIncorrect() {
+  const resultElement = document.createElement("p");
+  resultElement.textContent = "That’s wrong 🙁";
+  resultElement.className = "incorrect";
+  // document.body.append(resultElement);
+  Print.appendChild(resultElement);
+}
 
 //solution 1
 // const yesButton = document.querySelector(".yes");
