@@ -34,6 +34,7 @@ function showAnswerIsCorrect() {
   //resultElement dem body hinzufügen (append am Ende. prepend am Anfang.)
   // document.body.append(resultElement);
   Print.appendChild(resultElement);
+  disableButtons();
 }
 
 function showAnswerIsIncorrect() {
@@ -42,6 +43,12 @@ function showAnswerIsIncorrect() {
   resultElement.className = "incorrect";
   // document.body.append(resultElement);
   Print.appendChild(resultElement);
+  disableButtons();
+}
+
+function disableButtons() {
+  yesButton.disabled = true;
+  noButton.disabled = true;
 }
 
 //solution 1
