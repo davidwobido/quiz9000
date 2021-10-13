@@ -7,7 +7,7 @@ const questionList = [
   "Do you still enjoy this quiz?",
 ];
 
-const answerList = [true, false, true, false, true, false];
+let answerList = [true, false, true, false, true, false];
 let questionIndex = 0;
 correctAnswer = answerList[questionIndex];
 // const correctAnswer = true;
