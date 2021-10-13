@@ -11,6 +11,7 @@ const answerList = [true, false, true, false, true, false];
 let questionIndex = 0;
 let correctAnswer = answerList[questionIndex];
 
+//Question counter
 function updateProgress() {
   const progressElement = document.querySelector(".progress");
   progressElement.textContent = `Question ${questionIndex + 1}/${
@@ -28,13 +29,16 @@ function nextQuestion() {
   questionIndex += 1;
   correctAnswer = answerList[questionIndex];
   const nextButton = document.createElement("p");
+
   nextButton.textContent = "Next Question";
   nextButton.className = "nextButton";
   Print.appendChild(nextButton);
   nextButton.onclick = function () {
     question.textContent = questionList[questionIndex];
     // questionIndex += 1;
-    Print.removeChild(document.querySelector(".correct"));
+    // Print.removeChild(document.querySelector(".correct"));
+    // .querySelector(".quizcard")
+    // .removeChild(document.querySelector(".print"));
   };
   updateProgress();
 }
