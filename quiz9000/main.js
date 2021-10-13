@@ -7,14 +7,37 @@ const questionList = [
   "Do you still enjoy this quiz?",
 ];
 
-let answerList = [true, false, true, false, true, false];
+const answerList = [true, false, true, false, true, false];
 let questionIndex = 0;
-correctAnswer = answerList[questionIndex];
-// const correctAnswer = true;
+let correctAnswer = answerList[questionIndex];
+
+function updateProgress() {
+  const progressElement = document.querySelector(".progress");
+  progressElement.textContent = `Question ${questionIndex + 1}/${
+    questionList.length
+  }`;
+  // same as: "Question " + (questionIndex + 1) + "/" + questionList.length;
+}
 
 // Question
 const question = document.querySelector(".question");
 question.textContent = questionList[0];
+updateProgress();
+
+function nextQuestion() {
+  questionIndex += 1;
+  correctAnswer = answerList[questionIndex];
+  const nextButton = document.createElement("p");
+  nextButton.textContent = "Next Question";
+  nextButton.className = "nextButton";
+  Print.appendChild(nextButton);
+  nextButton.onclick = function () {
+    question.textContent = questionList[questionIndex];
+    // questionIndex += 1;
+    Print.removeChild(document.querySelector(".correct"));
+  };
+  updateProgress();
+}
 
 // Yes-Button
 const yesButton = document.querySelector(".yes");
@@ -55,22 +78,4 @@ function showAnswerIsIncorrect() {
   resultElement.textContent = "That’s wrong 🙁";
   resultElement.className = "incorrect";
   Print.appendChild(resultElement);
-}
-
-// function disableButtons() {
-//   yesButton.disabled = true;
-//   noButton.disabled = true;
-// }
-
-function nextQuestion() {
-  questionIndex += 1;
-  const nextButton = document.createElement("p");
-  nextButton.textContent = "Next Question";
-  nextButton.className = "nextButton";
-  Print.appendChild(nextButton);
-  nextButton.onclick = function () {
-    question.textContent = questionList[questionIndex];
-    // questionIndex += 1;
-    Print.removeChild(document.querySelector(".correct"));
-  };
 }

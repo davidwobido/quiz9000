@@ -76,3 +76,8 @@ body {
 
   text-decoration: underline;
 }
+
+.progress {
+  font-size: 0.75rem;
+  font-weight: 200;
+}
