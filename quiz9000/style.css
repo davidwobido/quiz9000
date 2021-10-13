@@ -14,7 +14,7 @@ body {
   width: 15rem;
   padding: 2rem;
   margin: 1rem;
-  align-items: center;
+  /* align-items: center; */
   justify-items: center;
   border-radius: 1rem;
   font-size: 1.3rem;
@@ -75,4 +75,29 @@ body {
   color: rgb(23, 71, 87);
 
   text-decoration: underline;
+}
+
+.progress,
+.startAgain {
+  font-size: 0.75rem;
+  font-weight: 200;
+}
+
+.startAgain {
+  color: rgb(196, 210, 215);
+  background: rgb(23, 71, 87);
+  padding: 0.3rem 0.5rem;
+  opacity: 35%;
+  margin-top: 2rem;
+}
+
+.finishElement {
+  display: grid;
+  align-items: center;
+  background: rgb(66, 106, 68);
+  color: white;
+  margin: 3rem;
+  padding: 4rem;
+  border-radius: 1rem;
+  font-size: 5rem;
 }
