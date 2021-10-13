@@ -2,12 +2,11 @@ const questionList = [
   "Is this a quiz?",
   "Is the name of the quiz 'Quiz 9001'?",
   "Is the backgound blue?",
-  "Is the font pink?",
-  "Are there round corners?",
+  "Is the font color pink?",
   "Do you still enjoy this quiz?",
 ];
 
-const answerList = [true, false, true, false, true, false];
+const answerList = [true, false, true, false, true];
 let questionIndex = 0;
 let correctAnswer = answerList[questionIndex];
 
@@ -22,25 +21,25 @@ function updateProgress() {
 
 // Question
 const question = document.querySelector(".question");
-question.textContent = questionList[0];
+question.textContent = questionList[questionIndex];
 updateProgress();
+
+function finishQuiz() {
+  const finishElement = document.querySelector(".quizcard");
+  finishElement.textContent = "Finished 🏁";
+  finishElement.className = "finishElement";
+}
 
 function nextQuestion() {
   questionIndex += 1;
-  correctAnswer = answerList[questionIndex];
-  const nextButton = document.createElement("p");
-
-  nextButton.textContent = "Next Question";
-  nextButton.className = "nextButton";
-  Print.appendChild(nextButton);
-  nextButton.onclick = function () {
+  Print.removeChild(document.querySelector(".correct"));
+  if (questionIndex < questionList.length) {
+    correctAnswer = answerList[questionIndex];
     question.textContent = questionList[questionIndex];
-    // questionIndex += 1;
-    // Print.removeChild(document.querySelector(".correct"));
-    // .querySelector(".quizcard")
-    // .removeChild(document.querySelector(".print"));
-  };
-  updateProgress();
+    updateProgress();
+  } else {
+    finishQuiz();
+  }
 }
 
 // Yes-Button
@@ -71,10 +70,9 @@ function showAnswerIsCorrect() {
   // p hat die Klasse
   resultElement.className = "correct";
   // resultElement dem body hinzufügen (append am Ende. prepend am Anfang.)
-  // document.body.append(resultElement);
   Print.appendChild(resultElement);
   // disableButtons();
-  nextQuestion();
+  setTimeout(nextQuestion, 800);
 }
 
 function showAnswerIsIncorrect() {
@@ -83,3 +81,14 @@ function showAnswerIsIncorrect() {
   resultElement.className = "incorrect";
   Print.appendChild(resultElement);
 }
+
+// const nextButton = document.createElement("p");
+// nextButton.textContent = "Next Question";
+// nextButton.className = "nextButton";
+// Print.appendChild(nextButton);
+// nextButton.onclick = function () {
+//   question.textContent = questionList[questionIndex];
+//   // questionIndex += 1;
+//   // Print.removeChild(document.querySelector(".correct"));
+//   // .querySelector(".quizcard")
+//   // .removeChild(document.querySelector(".print"));
